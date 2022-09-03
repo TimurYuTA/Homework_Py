@@ -106,26 +106,3 @@
 #     Ymin = Ymax
 #     Ymax = n
 # print(f'\nРасстояние между точками А и В равно {round(((Xmax - Xmin)**2 + (Ymax - Ymin)**2)**0.5, 3)}\n')
-
-
-
-# ДОП:
-# Последовательностью Фибоначчи называется последовательность чисел a0, a1, ..., an, ..., где
-# a0 = 0, a1 = 1, ak = ak-1 + ak-2 (k > 1).
-# Требуется найти N-е число Фибоначчи.
-# Пример:
-# N=7 -> 13
-
-# n = int(input('\nВведите N: '))
-# firstN = 0
-# secondN = 1
-# if n == 0:
-#     print(f'\n{n}-е число Фибоначчи - {firstN}\n')
-# elif n == 1:
-#     print(f'\n{n}-е число Фибоначчи - {secondN}\n')
-# else:
-#     for i in range(n - 1):
-#         FibonachiN = firstN + secondN
-#         firstN = secondN
-#         secondN = FibonachiN
-#     print(f'\n{n}-е число Фибоначчи - {FibonachiN}\n')

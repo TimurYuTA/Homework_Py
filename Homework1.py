@@ -16,6 +16,18 @@
 #     print(f'\n{n}-й день недели не является выходным!\n')
 
 
+
 # Задача №2
 # Напишите программу для проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 
+# print('\nПроверка истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат:\n')
+# i = 0
+# for X in range(0, 2):
+#     for Y in range(0, 2):
+#         for Z in range(0, 2):
+#             LeftPart = not (X or Y or Z)
+#             RightPart = not X and not Y and not Z
+#             i = i + 1
+#             print(f'{i}) ¬({X} ⋁ {Y} ⋁ {Z}) = ¬{X} ⋀ ¬{Y} ⋀ ¬{Z} - {LeftPart == RightPart}')
+# print('\n')
+            

@@ -133,6 +133,11 @@
 # berries_number = {}
 # for i in range(1, n + 1):
 #     berries_number[i] = randint(0, 1000)
-# max_berries = berries_number[bush] + berries_number[bush + 1] + berries_number[bush - 1]
+# if bush == n:
+#     max_berries = berries_number[bush-1] + berries_number[bush] + berries_number[1]
+# elif bush == 1:
+#     max_berries = berries_number[n] + berries_number[bush] + berries_number[bush+1]
+# else:
+#     max_berries = berries_number[bush] + berries_number[bush + 1] + berries_number[bush - 1]
 # print(f'\n{berries_number}')
 # print(f'\nМаксимальное число ягод -> {max_berries}\n')

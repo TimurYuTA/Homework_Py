@@ -2,19 +2,19 @@
 # Дана последовательность из N целых чисел и число K. Необходимо сдвинуть всю последовательность 
 # (сдвиг - циклический) на |K| элементов вправо, если K – положительное и влево, если отрицательное.
 
-n = int(input('\nВведите количество чисел в последовательности: '))
-List_in = [int(input(f'Введите {i + 1}-е число: ')) for i in range(n)]
-k = int(input('\nЗадайте сдвиг: '))
-print(f'\n{List_in} - без сдвига')
-if k > 0:
-    for i in range(k % n):
-        List_in.insert(0, List_in[n - 1])
-        List_in.pop()
-elif k < 0:
-    for i in range((k * (-1)) % n):
-        List_in.append(List_in[0])
-        List_in.pop(0)
-print(f'{List_in} - со сдвигом\n')
+# n = int(input('\nВведите количество чисел в последовательности: '))
+# List_in = [int(input(f'Введите {i + 1}-е число: ')) for i in range(n)]
+# k = int(input('\nЗадайте сдвиг: '))
+# print(f'\n{List_in} - без сдвига')
+# if k > 0:
+#     for i in range(k % n):
+#         List_in.insert(0, List_in[n - 1])
+#         List_in.pop()
+# elif k < 0:
+#     for i in range((k * (-1)) % n):
+#         List_in.append(List_in[0])
+#         List_in.pop(0)
+# print(f'{List_in} - со сдвигом\n')
 
 
 

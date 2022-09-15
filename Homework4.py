@@ -68,30 +68,62 @@
 # Пример:
 # - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
-from random import randint
+# from random import randint
 
 
-k = int(input('\nВведите натуральную степень k: '))
-list_m = []
-for i in range(0, k + 1):
-    number = randint(0, 100)
-    if number != 0:
-        if number == 1:
-            if i == 0: list_m.insert(0, str(number))
-            elif i == 1: list_m.insert(0, 'x')
-            else: list_m.insert(0, 'x^' + str(i))
-        else:
-            if i == 0: list_m.insert(0, str(number))
-            elif i == 1: list_m.insert(0, str(number) + '*x')
-            else: list_m.insert(0, str(number) + '*x^' + str(i))
-str_m = ' + '.join(list_m) + ' = 0'
-with open('4-4.txt', 'w') as f: f.write(str_m)
-print(f'\n{str_m}\n')
+# k = int(input('\nВведите натуральную степень k: '))
+# list_m = []
+# for i in range(0, k + 1):
+#     number = randint(0, 100)
+#     if number != 0:
+#         if number == 1:
+#             if i == 0: list_m.insert(0, str(number))
+#             elif i == 1: list_m.insert(0, 'x')
+#             else: list_m.insert(0, 'x^' + str(i))
+#         else:
+#             if i == 0: list_m.insert(0, str(number))
+#             elif i == 1: list_m.insert(0, str(number) + '*x')
+#             else: list_m.insert(0, str(number) + '*x^' + str(i))
+# str_m = ' + '.join(list_m) + ' = 0'
+# with open('4-4.txt', 'w') as f: f.write(str_m)
+# print(f'\n{str_m}\n')
 
 
 
 # Задача 5.
 # 35. Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
+
+from random import randint
+import re
+
+for j in range(2):   # Создаём два файла, в каждый из которых создаем и записываем многочлен
+    k = int(input('\nВведите натуральную степень k: '))
+    list_m = []
+    for i in range(0, k + 1):
+        number = randint(0, 100)
+        if number != 0:
+            if number == 1:
+                if i == 0: list_m.insert(0, str(number))
+                elif i == 1: list_m.insert(0, 'x')
+                else: list_m.insert(0, 'x^' + str(i))
+            else:
+                if i == 0: list_m.insert(0, str(number))
+                elif i == 1: list_m.insert(0, str(number) + '*x1')
+                else: list_m.insert(0, str(number) + '*x^' + str(i))
+    str_m = ' + '.join(list_m) + ' = 0'
+    with open(f'4-5-{j + 1}.txt', 'w') as file: file.write(str_m)
+
+with open('4-5-1.txt', 'r') as file_1: list_1 = file_1.read()[:-4].split(' + ')
+with open('4-5-2.txt', 'r') as file_2: list_2 = file_2.read()[:-4].split(' + ')
+
+power = max(int(list_1[0].split('*x^')[1]), int(list_2[0].split('*x^')[1]))
+list_sum = []
+# for i in range(power, 0, -1):
+#     if 
+print(power)
+
+
+
 
 # Задача 6.
 # (Дополнительная задача) https://www.eolymp.com/ru/problems/854

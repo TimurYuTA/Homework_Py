@@ -68,6 +68,28 @@
 # Пример:
 # - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
+from random import randint
+
+
+k = int(input('\nВведите натуральную степень k: '))
+list_m = []
+for i in range(0, k + 1):
+    number = randint(0, 100)
+    if number != 0:
+        if number == 1:
+            if i == 0: list_m.insert(0, str(number))
+            elif i == 1: list_m.insert(0, 'x')
+            else: list_m.insert(0, 'x^' + str(i))
+        else:
+            if i == 0: list_m.insert(0, str(number))
+            elif i == 1: list_m.insert(0, str(number) + '*x')
+            else: list_m.insert(0, str(number) + '*x^' + str(i))
+str_m = ' + '.join(list_m) + ' = 0'
+with open('4-4.txt', 'w') as f: f.write(str_m)
+print(f'\n{str_m}\n')
+
+
+
 # Задача 5.
 # 35. Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 

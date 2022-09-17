@@ -93,35 +93,88 @@
 # Задача 5.
 # 35. Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 
-from random import randint
-import re
+# from random import randint
 
-for j in range(2):   # Создаём два файла, в каждый из которых создаем и записываем многочлен
-    k = int(input('\nВведите натуральную степень k: '))
-    list_m = []
-    for i in range(0, k + 1):
-        number = randint(0, 100)
-        if number != 0:
-            if number == 1:
-                if i == 0: list_m.insert(0, str(number))
-                elif i == 1: list_m.insert(0, 'x')
-                else: list_m.insert(0, 'x^' + str(i))
-            else:
-                if i == 0: list_m.insert(0, str(number))
-                elif i == 1: list_m.insert(0, str(number) + '*x1')
-                else: list_m.insert(0, str(number) + '*x^' + str(i))
-    str_m = ' + '.join(list_m) + ' = 0'
-    with open(f'4-5-{j + 1}.txt', 'w') as file: file.write(str_m)
 
-with open('4-5-1.txt', 'r') as file_1: list_1 = file_1.read()[:-4].split(' + ')
-with open('4-5-2.txt', 'r') as file_2: list_2 = file_2.read()[:-4].split(' + ')
+# # Создаём два файла, в каждый из которых создаем и записываем многочлен
+# for j in range(2):
+#     k = int(input('\nВведите натуральную степень k: '))
+#     list_m = []
+#     for i in range(0, k + 1):
+#         number = randint(0, 100)
+#         if number != 0:
+#             if number == 1:
+#                 if i == 0: list_m.insert(0, str(number))
+#                 elif i == 1: list_m.insert(0, 'x')
+#                 else: list_m.insert(0, 'x^' + str(i))
+#             else:
+#                 if i == 0: list_m.insert(0, str(number))
+#                 elif i == 1: list_m.insert(0, str(number) + '*x')
+#                 else: list_m.insert(0, str(number) + '*x^' + str(i))
+#     str_m = ' + '.join(list_m) + ' = 0'
+#     with open(f'4-5-{j + 1}.txt', 'w') as file: file.write(str_m)
 
-power = max(int(list_1[0].split('*x^')[1]), int(list_2[0].split('*x^')[1]))
-list_sum = []
-# for i in range(power, 0, -1):
-#     if 
-print(power)
+# # Считываем два файла, разделяем и записываем многочлены в списки 
+# with open('4-5-1.txt', 'r') as file_1: list_1 = file_1.read()[:-4].split(' + ')
+# with open('4-5-2.txt', 'r') as file_2: list_2 = file_2.read()[:-4].split(' + ')
 
+# # Находим максимальную степень многочленов
+# power = max(int(list_1[0].split('x^')[1]), int(list_2[0].split('x^')[1]))
+
+# # Создаём список, и записываем туда сумму многочленов где степень >= 2
+# list_sum = []
+# i = 0
+# while i < (power - 1):
+#     if int(list_1[0].split('x^')[1]) == int(list_2[0].split('x^')[1]):
+#         if '*x^' in list_1[0] and '*x^' in list_2[0]:
+#             list_sum.append(str(int(list_1[0].split('*x^')[0]) + int(list_2[0].split('*x^')[0])) + '*x^' + str(int(list_1[0].split('*x^')[1])))
+#         elif '*x^' in list_1[0] and 'x^' in list_2[0]:
+#             list_sum.append(str(int(list_1[0].split('*x^')[0]) + 1) + '*x^' + str(int(list_1[0].split('*x^')[1])))
+#         elif 'x^' in list_1[0] and '*x^' in list_2[0]:
+#             list_sum.append(str(int(list_2[0].split('*x^')[0]) + 1) + '*x^' + str(int(list_1[0].split('*x^')[1])))
+#         else: list_sum.append(str(2) + '*x^' + str(int(list_1[0].split('*x^')[1])))
+#         list_1.pop(0)
+#         list_2.pop(0)
+#     else:
+#         if int(list_1[0].split('x^')[1]) > int(list_2[0].split('x^')[1]): 
+#             list_sum.append(list_1[0])
+#             list_1.pop(0)
+#         else: 
+#             list_sum.append(list_2[0])
+#             list_2.pop(0)
+#     i += 1
+
+# # Записываем сумму многочленов где степень = 1
+# if '*x' in list_1[0] and '*x' in list_2[0]:
+#     list_sum.append(str(int(list_1[0].split('*x')[0]) + int(list_2[0].split('*x')[0])) + '*x')
+#     list_1.pop(0)
+#     list_2.pop(0)
+# elif '*x' in list_1[0] and 'x' in list_2[0]:
+#     list_sum.append(str(int(list_1[0].split('*x')[0]) + 1) + '*x')
+#     list_1.pop(0)
+#     list_2.pop(0)
+# elif 'x' in list_1[0] and '*x' in list_2[0]:
+#     list_sum.append(str(int(list_2[0].split('*x')[0]) + 1) + '*x')
+#     list_1.pop(0)
+#     list_2.pop(0)
+# elif 'x' in list_1[0] and 'x' in list_2[0]:
+#     list_sum.append(str(2) + '*x')
+#     list_1.pop(0)
+#     list_2.pop(0)
+# elif 'x' in list_1[0] and 'x' not in list_2[0]:
+#     list_sum.append(list_1[0])
+#     list_1.pop(0)
+# elif 'x' not in list_1[0] and 'x' in list_2[0]:
+#     list_sum.append(list_2[0])
+#     list_2.pop(0)
+
+# # Записываем сумму многочленов где нет "х"
+# list_sum.append(str(int(list_1[0]) + int(list_2[0])))
+
+# # Записываем уравнение
+# str_sum = ' + '.join(list_sum) + ' = 0'
+# with open('4-5-SUM.txt', 'w') as file_sum: file_sum.write(str_sum)
+# print(f'\n{str_sum}\n')
 
 
 

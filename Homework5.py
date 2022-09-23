@@ -187,3 +187,34 @@
 # Задача 3.
 # Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
+
+# action = int(input('\nВведите 1 - для сжатия, 2 - восстановления: '))
+# while action < 1 or action > 2:
+#     action = int(input('Вы ошиблись!\nВведите 1 - для сжатия, 2 - восстановления: '))
+
+# if action == 1:
+#     with open('data_in', 'w') as f1: f1.write(input('\nВведите данные для сжатия: '))
+#     with open('data_in', 'r') as file_in: data_str = file_in.read()
+#     data_list = [i for i in data_str]
+#     compressed = ''
+#     count_el = 1
+#     for i in range(len(data_list) - 1):
+#         if data_list[i + 1] == data_list[i]:
+#             count_el += 1
+#         else:
+#             compressed = compressed + str(count_el) + data_list[i]
+#             count_el = 1
+#         if i == len(data_list) - 2: compressed = compressed + str(count_el) + data_list[i + 1]
+#     with open('data_out', 'w') as f3: f3.write(compressed)
+#     print(f'\n{data_str} -> {compressed}\n')
+
+# elif action == 2:
+#     with open('data_in', 'w') as f2: f2.write(input('\nВведите данные для восстановления: '))
+#     with open('data_in', 'r') as file_out: data2_str = file_out.read()
+#     data2_list = [i for i in data2_str]
+#     recovery = ''
+#     for i in range(0, len(data2_list) - 1, 2):
+#         for j in range(int(data2_list[i])):
+#             recovery = recovery + data2_list[i + 1]
+#     with open('data_out', 'w') as f4: f4.write(recovery)
+#     print(f'\n{data2_str} -> {recovery}\n')

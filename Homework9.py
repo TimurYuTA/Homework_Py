@@ -17,7 +17,7 @@ from random import randint
 import time
 
 
-bot = telebot.TeleBot(token='5614343760:AAHoM5PFkDNPA-Urzi7STHjG9904YSl8ySc')
+bot = telebot.TeleBot(token='')
 
 
 # Приветствие - команда /start

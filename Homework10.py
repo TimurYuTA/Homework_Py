@@ -7,8 +7,8 @@ from random import choice as ch
 import time
 
 
-bot = Bot(token='5614343760:AAHoM5PFkDNPA-Urzi7STHjG9904YSl8ySc')
-updater = Updater(token='5614343760:AAHoM5PFkDNPA-Urzi7STHjG9904YSl8ySc')
+bot = Bot(token='')
+updater = Updater(token='')
 dispatcher = updater.dispatcher
 
 data = {6: 4, 7: 4, 8: 4, 9: 4, 10: 4, 'Валет': 4, 'Дама': 4, 'Король': 4,
